@@ -20,5 +20,6 @@ services:
   #связываем репозиторий php с образом nginx
   php:
     image: php:8.3-fpm
+    # монтирование папки 'code'
     volumes:
       - ./code:/code
