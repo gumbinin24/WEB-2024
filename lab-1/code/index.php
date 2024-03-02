@@ -152,4 +152,11 @@ while ($indx <= 10) {
 echo $i .' - столько первых элементов массива 1,2,3,4,5,6,7,8,9,10 нужно сложить, чтобы их суммма была больше 10';
 echo "\n";
 
-
+function printStringReturnNumber(): int
+{
+    echo "Возврат числового значения";
+    return 13;
+}
+$myNum = printStringReturnNumber();
+echo "\n";
+echo $myNum;
