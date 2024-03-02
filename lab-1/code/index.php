@@ -127,8 +127,29 @@ for ($i = 0; $i < count($mass); $i++){
     $new_mass[$i] = abs($mass[$i]);
     echo $new_mass[$i];
 }
+echo "\n";
+$r = rand();
+$del = array();
+for ($i = 1; $i <= ceil(sqrt($r)); $i++) {
+    if ($r % $i == 0) {
+        $del[] = $i;
+        $del[] = $r / $i;
+    }
+}
+echo "Делители числа $r - ";
+foreach ($del as $value) {
+    echo $value . ", ";
+}
+echo "\n";
 
-
-
+$dan = array(1,2,3,4,5,6,7,8,9,10);
+$indx = $dan[0];
+$i = 1;
+while ($indx <= 10) {
+    $indx += $dan[$i];
+    $i++;
+}
+echo $i .' - столько первых элементов массива 1,2,3,4,5,6,7,8,9,10 нужно сложить, чтобы их суммма была больше 10';
+echo "\n";
 
 
