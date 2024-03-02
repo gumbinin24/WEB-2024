@@ -83,8 +83,23 @@ foreach ($numbers as $value) {
 }
 echo "корень из суммы квадратов чисел 4, 2, 5, 19, 13, 0, 10 равен: " .sqrt($summa);
 echo "\n";
-
-
+$s = round(sqrt(379));
+$ss = round(sqrt(379), 1);
+$sss = round(sqrt(379), 2);
+$ans = array($s, $ss, $sss);
+echo "квадратный корень из 379, округленный до целых, десятых, сотых равен соответственно: ";
+echo "\n";
+echo $s;
+echo "\n";
+echo $ss;
+echo "\n";
+echo $sss;
+echo "\n";
+$gg = array("round" => round(sqrt(587)), "ceil" => ceil(sqrt(587)));
+echo "квадртаный корень из 587, округленный в большую сторону равен: " .$gg["round"];
+echo "\n";
+echo "квадртаный корень из 587, округленный в меньшую сторону равен: " .$gg["ceil"];
+echo "\n";
 
 
 
