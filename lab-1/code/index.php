@@ -58,3 +58,33 @@ $answer /= 2;
 $answer -= $my_num;
 echo $answer;
 
+echo "\nNum 14\n";
+$a = 10;
+$b = 3;
+echo $a % $b;
+echo "\n";
+echo "Делится ли $a на $b без остатка? ";
+if ($a % $b == 0) {
+    echo "Делится, " . $a / $b;
+} else {
+    echo "Делится с остатком, остаток от деления $a на $b будет равен " . $a % $b;
+}
+echo "\n";
+$at = pow(2,10);
+echo "2 в степени 10 равно: " .$at;
+echo "\n";
+echo "корень из числа 245 равен: " .sqrt(245);
+echo "\n";
+
+$summa = 0;
+$numbers = array(4, 2, 5, 19, 13, 0, 10);
+foreach ($numbers as $value) {
+    $summa += pow($value, 2);
+}
+echo "корень из суммы квадратов чисел 4, 2, 5, 19, 13, 0, 10 равен: " .sqrt($summa);
+echo "\n";
+
+
+
+
+
