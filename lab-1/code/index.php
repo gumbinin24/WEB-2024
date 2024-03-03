@@ -322,3 +322,100 @@ echo "Последний элемент в этом массиве: " .$arr[$cou
 echo "\n";
 echo "Предпоследний элемент в этом массиве выглядит так: " .$arr[$counter-2];
 echo "\n";
+
+echo "\nNum18\n";
+function srav(int|float $fisrt_num, int|float $second_num): bool
+{
+    if (($fisrt_num+$second_num) > 10){
+        return true;
+    }
+    else {
+        return false;
+    }
+}
+$dwa_ch = srav(2,4);
+if ($dwa_ch){
+    echo "true";
+}
+else{
+    echo "false";
+}
+echo "\n";
+
+function abss(int|float $first_num, int|float $second_num): bool
+{
+    if ($first_num == $second_num){
+        return true;
+    }
+    else{
+        return false;
+    }
+}
+$ab = abss(2,2);
+if ($ab){
+    echo "true";
+}
+else{
+    echo "false";
+}
+echo "\n";
+
+$test = 0;
+echo (($test == 0) ? "верно" : '');
+echo "\n";
+
+$age = rand(1, 1000);
+function suma(int $age): int
+{
+    if ($age<0){
+        $age = abs($age);
+    }
+    $str_age = $age .'';
+    $sum = intval($str_age[0]);
+    for ($i=1; $i < strlen($str_age);$i++){
+        $sum += intval($str_age[$i]);
+    }
+    return $sum;
+}
+function old(int $age): string|int
+{
+    if ($age<10|$age>99){
+        echo "число меньше 10 или больше 99";
+    }
+    if ((10<=$age) and($age>=99)){
+        suma($age);
+    }
+    return $age;
+}
+$sum_age = suma(old(20));
+if ($sum_age<=9){
+    echo "Сумма цифр однозначна";
+}
+else{
+    echo "Сумма цифр двузначна";
+}
+echo "\n";
+
+$arr = array();
+$numm = rand(1, 5);
+
+for ($i = 0; $i < $numm; $i++) {
+    $arr[] = rand(1, 100);
+}
+foreach ($arr as $sh) {
+    echo $sh . ' ';
+}
+echo "\n";
+
+$i = 0;
+$sum = 0;
+foreach ($arr as $sh) {
+    $i += 1;
+    if ($i == 4) {
+        break;
+    }
+    $sum += $sh;
+}
+if ($i == 3) {
+    echo 'Сработало условие: количество элементов в массиве равно 3, их сумма равна ' . $sum;
+}
