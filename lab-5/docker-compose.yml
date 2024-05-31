@@ -1,0 +1,34 @@
+# прописываем нужную нам версию
+version: "3.8"
+# прописываем сервисы
+services:
+  # придумываем название сервиса
+  web:
+    # образ докера (собранный обрах nginx)
+    image: nginx:latest
+    # пробрасываем порты для работы веб-сервиса
+    ports:
+      - "8080:80"
+    # монтирование папки 'Task 3' и настройка nginx
+    volumes:
+      - ./code:/code
+      # проброска для докера конфиг файла site.conf
+      - ./site.conf:/etc/nginx/conf.d/site.conf
+    #связываем сервер и php
+    links:
+      - php
+  #связываем репозиторий php с образом nginx
+  php:
+    build: .
+    links:
+      - db
+    volumes:
+      - ./code:/code
+    depends_on:
+      - db
+  db:
+    image: mysql:8.0
+    ports:
+      - '6603:3306'
+    environment:
+      MYSQL_ROOT_PASSWORD: donut
